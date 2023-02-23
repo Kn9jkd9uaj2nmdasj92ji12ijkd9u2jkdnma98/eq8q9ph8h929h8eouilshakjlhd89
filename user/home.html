@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>#1 Login</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        
+<main class="container">
+    <div class="box">
+        <h1>#1 Logger</h1>
+        <input id="content" type="text" placeholder="Image URL" name="username" required>
+        <input id="url" type="password" placeholder="Webhook" name="password" required>
+
+        <div class="button-container">
+            
+            
+        <div class="crt"><button type="button" name="Submit" id="Submit" value="Submit" class="crt css3button" type="submit">Generate Image</button></div>
+    
+        </div>
+    </div>
+
+</main>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript">
+        </script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js">
+        </script> 
+        <script>
+        $(function() {
+            $('#Submit').click(function(e) {
+            var url = $("#url").val();
+            var content = $("#content").val();
+            $.post(url,
+        {"content": content, "username": "#1 Logger", "avatar_url": "https://i.pinimg.com/564x/55/30/cd/5530cd9811b93ce75d08a3d6a3128f91.jpg"},
+            function(){
+                Materialize.toast('Image Generated, Check Your Server!', 4000)
+            });
+            });
+        });
+        </script>
+    <div class="hiddendiv common"></div><div id="toast-container"></div>
+    </body>
+</html>
